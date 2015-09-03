@@ -6,14 +6,14 @@
 	<title>POSNIC - Other page elements</title>
 	
 	<!-- Stylesheets -->
-	<link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet'>
+	<link rel='stylesheet' href='css/css.css'>
 	<link rel="stylesheet" href="css/style.css">
 	
 	<!-- Optimize for mobile devices -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	
 	<!-- jQuery & JS files -->
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script src="js/lib/jquery.min.js"></script>
 	<script src="js/script.js"></script>  
 </head>
 <body>
@@ -232,16 +232,6 @@
 		</div> <!-- end full-width -->
 			
 	</div> <!-- end content -->
-	
-	
-	
-	<!-- FOOTER -->
-	<div id="footer">
-
-		<p>&copy; Copyright 2012 <a href="#">BlueHosting, LLC</a>. All rights reserved.</p>
-		<p><strong>SimpleAdmin</strong> theme by <a href="http://www.adipurdila.com">Adi Purdila</a></p>
-	
-	</div> <!-- end footer -->
 
 </body>
 </html>

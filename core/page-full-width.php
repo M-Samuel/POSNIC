@@ -15,7 +15,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	
 	<!-- jQuery & JS files -->
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script src="js/min/jquery.min.js"></script>
 	<script src="js/script.js"></script>  
 </head>
 <body>
@@ -154,16 +154,6 @@ mysql_close($con);
 		</div> <!-- end full-width -->
 			
 	</div> <!-- end content -->
-	
-	
-	
-	<!-- FOOTER -->
-	<div id="footer">
-
-		<p>&copy; Copyright 2012 <a href="#">BlueHosting, LLC</a>. All rights reserved.</p>
-		<p><strong>SimpleAdmin</strong> theme by <a href="http://www.adipurdila.com">Adi Purdila</a></p>
-	
-	</div> <!-- end footer -->
 
 </body>
-</html>?>
+</html>

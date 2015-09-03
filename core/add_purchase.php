@@ -106,7 +106,7 @@ include_once("init.php");
 	<title>POSNIC - Add Purchase</title>
 	
 	<!-- Stylesheets -->
-	<link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet'>
+	<link rel='stylesheet' href='css/css.css'>
 	<link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="js/date_pic/date_input.css">
         <link rel="stylesheet" href="lib/auto/css/jquery.autocomplete.css">
@@ -663,14 +663,6 @@ function balance_amount(){
 		</div></div> <!-- end full-width -->
 			
 	</div> <!-- end content -->
-	
-	
-	
-	<!-- FOOTER -->
-	<div id="footer">
-		<p>Any Queries email to <a href="mailto:sridhar.posnic@gmail.com?subject=Stock%20Management%20System">sridhar.posnic@gmail.com</a>.</p>
-	
-	</div> <!-- end footer -->
 
 </body>
 </html>

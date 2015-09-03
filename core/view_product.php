@@ -1,6 +1,5 @@
 <?php
 include_once("init.php");
-
 ?>
 <!DOCTYPE html>
 
@@ -10,7 +9,7 @@ include_once("init.php");
 	<title>POSNIC - Stock</title>
 	
 	<!-- Stylesheets -->
-	<!--<link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet'>-->
+	<!--<link rel='stylesheet' href='css/css.css'>-->
 	<link rel="stylesheet" href="css/style.css">
 	
 	<!-- Optimize for mobile devices -->
@@ -553,10 +552,6 @@ while($row = mysql_fetch_array($result))
 				
 		</div> 
 	</div> 
-		<div id="footer">
-		<p>Any Queries email to <a href="mailto:sridhar.posnic@gmail.com?subject=Stock%20Management%20System">sridhar.posnic@gmail.com</a>.</p>
-	
-	</div> <!-- end footer -->
 
 </body>
 </html>
