@@ -11,14 +11,13 @@
 	# Note that filters and validators are separate rule sets and method calls. There is a good reason for this. 
 
 	require "lib/gump.class.php";
-?>
-  <?php $count = $db->countOfAll("store_details");
-  if($count>1){
-      
-   header("location:index.php");
-  }
-  ?>
-  <?php if(isset($_POST['submit']) and $_POST['submit']==='Upload'){
+	$count = $db->countOfAll("store_details");
+	if($count>1) {
+//   	header("Location: index.php");
+		include_once "safe_redirect.php";
+		safeRedirect("index.php");
+	}
+	if(isset($_POST['submit']) and $_POST['submit']==='Upload'){
     
 $allowedExts = array("gif", "jpeg", "jpg", "png");
 $temp = explode(".", $_FILES["file"]["name"]);
@@ -55,26 +54,23 @@ if ((($_FILES["file"]["type"] == "image/gif")
 	
 	# Note that filters and validators are separate rule sets and method calls. There is a good reason for this. 
 
-            $upload= $_FILES["file"]["name"] ;
-           $type;
-           $db->query("UPDATE store_details  SET log='".$upload."',type='".$type."'");
-       header("location:next_store_details.php");
+       $upload= $_FILES["file"]["name"];
+       $type = $_FILES["file"]["type"];
+       $db->query("UPDATE store_details  SET log='".$upload."',type='".$type."'");
+       header("Location: next_store_details.php");
       
     }
-     // header("location:next_store_details.php");
-    ?>
+     // header("Location: next_store_details.php");
+?>
 <script type="text/javascript">
     setTimeout("window.location.reload();",4000);
     </script>
-        <?php
-  }
-else
-  {
-  echo "<p  style=color:red;margin-left:550px;font-size:20px >Invalid file</p>";
-        }}
-      
+<?php
+	} else {
+		echo "<p  style=color:red;margin-left:550px;font-size:20px >Invalid file</p>";
+	}
+}
 ?>
-  
 <html lang="en">
 <head>
 	<meta charset="utf-8">
@@ -172,8 +168,6 @@ else
 </head>
 <body>
 
-<!--    Only Index Page for Analytics   -->
-<?php include_once("analyticstracking.php") ?>
 	<!-- TOP BAR -->
 	<div id="top-bar">
 		
@@ -203,14 +197,13 @@ else
 			<!-- Change this image to your own company's logo -->
 			<!-- The logo will automatically be resized to 39px height. -->
 			<a href="#" id="company-branding" class="fr"><img src="<?php if(isset($_SESSION['logo'])) { echo "upload/".$_SESSION['logo'];}else{ echo "upload/posnic.png"; } ?>" alt="Posnic" /></a>
-			
+
 		</div> <!-- end full-width -->	
 
 	</div> <!-- end header -->
-	
-	<?php
+<?php
         
-        if(isset($_POST['submit']) and isset($_POST['sname']) and isset($_POST['address']) and $_POST['submit']=='Down'){
+        if(isset($_POST['submit']) and isset($_POST['sname']) and isset($_POST['address']) and $_POST['submit']=='Down') {
             $host=$_SESSION['host'] ;
             $user=$_SESSION['user'];
             $pass=$_SESSION['pass'];
@@ -228,17 +221,18 @@ else
 
     $db->query("UPDATE store_details  SET pin='".$pin."',city='".$city."',name='".$name."',email='".$email."',web='".$web."',address='".$address."',place='".$place."',phone='".$phone."' ");
 	
-            // $sql="INSERT INTO `store_details` (`name`, `address`, `place`, `city`, `phone`, `email`, `web`, `pin`) VALUES
+// $sql="INSERT INTO `store_details` (`name`, `address`, `place`, `city`, `phone`, `email`, `web`, `pin`) VALUES
 //('".$_POST['sname']."', '".$_POST['address']."', '".$_POST['place']."', '".$_POST['city']."', '".$_POST['phone']."', '".$_POST['email']."', '".$_POST['website']."', '".$_POST['pin']."')";
+// Execute query
 
-          // Execute query
-        
-           header("location:index.php");
-      
+//           header("Location: index.php");
+
+include_once "safe_redirect.php";
+safeRedirect("index.php");
+
         }
-        ?>
-	
-	<!-- MAIN CONTENT -->
+?>
+<!-- MAIN CONTENT -->
 	<div id="content">
 	
 		<form action="" method="POST" id="login-form" class="cmxform" autocomplete="off">
@@ -304,30 +298,6 @@ else
 </form>
 	
 	</div> </div> 
-	<!-- FOOTER -->
-	<div id="footer">
-		<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=286371564842269";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
-<div id="fb-root"></div>
-<div class="fb-like" data-href="https://www.facebook.com/posnic.point.of.sale" data-width="450" data-show-faces="true" data-send="true"></div>
-<div class="g-plusone" data-href="https://plus.google.com/u/0/107268519615804538483"></div> 
-<script type="text/javascript">
-      (function() {
-        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-        po.src = 'https://apis.google.com/js/plusone.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-      })();
-    </script><p>Any Queries email to <a href="mailto:sridhar.posnic@gmail.com?subject=Stock%20Management%20System">sridhar.posnic@gmail.com</a>.</p>
-		
-	
-	</div> <!-- end footer -->
 
 </body>
 </html>
-
