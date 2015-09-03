@@ -11,7 +11,6 @@ include_once("init.php");
 	<!-- Stylesheets -->
 	<!--<link rel='stylesheet' href='css/css.css'>-->
 	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/style.css">
 	
 	<!-- Optimize for mobile devices -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
