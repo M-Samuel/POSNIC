@@ -1,6 +1,5 @@
 <?php
 include_once("init.php");
-
 ?>
 <!DOCTYPE html>
 
@@ -380,10 +379,6 @@ $result = mysql_query($sql);
 				
 		</div> 
 	</div> 
-		<div id="footer">
-		<p>Any Queries email to <a href="mailto:sridharkalaibala@gmail.com?subject=Stock%20Management%20System">sridharkalaibala@gmail.com</a>.</p>
-	
-	</div> <!-- end footer -->
 
 </body>
 </html>

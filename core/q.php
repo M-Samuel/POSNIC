@@ -252,5 +252,4 @@ if(isset($_GET['limit']))
 		$pagination.= "</div>\n";		
 
 	}
-
 ?>
