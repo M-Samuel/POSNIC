@@ -1,5 +1,4 @@
-<?php include_once("init.php");
-  ?>
+<?php include_once("init.php"); ?>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
@@ -139,7 +138,7 @@ if ((($_FILES["file"]["type"] == "image/gif")
     setTimeout("window.location.reload();",4000);
     </script>
         <?php
-            header("location:update_details.php");
+            header("Location: update_details.php");
       
     }
   }
@@ -150,8 +149,6 @@ else
       
 ?>
          
-<!--    Only Index Page for Analytics   -->
-<?php include_once("analyticstracking.php") ?>
 	<!-- TOP BAR -->
 	<div id="top-bar">
 		
@@ -200,7 +197,7 @@ else
   if($db->query("UPDATE store_details  SET pin='".$pin."',city='".$city."',name='".$name."',email='".$email."',web='".$web."',address='".$address."',place='".$place."',phone='".$phone."' "))
 			echo "<br><font color=green size=+1 > Store Details Updated!</font>" ;
 			
-          // header("location:logo_set.php");
+          // header("Location: logo_set.php");
     //  exit;
         }
         ?>
@@ -275,33 +272,6 @@ else
 <input type="submit" name="submit" value="Submit" class="button round blue image-right ic-right-arrow">
 </form></div>	
 	</div> <!-- end content -->
-        
 	
-	
-	<!-- FOOTER -->
-	<div id="footer">
-		<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=286371564842269";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
-<div id="fb-root"></div>
-<div class="fb-like" data-href="https://www.facebook.com/posnic.point.of.sale" data-width="450" data-show-faces="true" data-send="true"></div>
-<div class="g-plusone" data-href="https://plus.google.com/u/0/107268519615804538483"></div> 
-<script type="text/javascript">
-      (function() {
-        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-        po.src = 'https://apis.google.com/js/plusone.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-      })();
-    </script><p>Any Queries email to <a href="mailto:sridhar.posnic@gmail.com?subject=Stock%20Management%20System">sridhar.posnic@gmail.com</a>.</p>
-		
-	
-	</div> <!-- end footer -->
-
 </body>
 </html>
-

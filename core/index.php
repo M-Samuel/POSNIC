@@ -1,14 +1,14 @@
 <?php
 session_start();
-if(!include_once "config.php"){
-           header("location:install.php");
+if(!file_exists("config.php") || !include_once "config.php"){
+           header("Location: install.php");
  }
 if (!defined('posnicEntry')) {
     define('posnicEntry', true);
 }
 if(isset($_SESSION['username'])) {
     if($_SESSION['usertype'] =='admin') // if session variable "username" does not exist.
-	header("location:dashboard.php"); // Re-direct to index.php
+	header("Location: dashboard.php"); // Re-direct to index.php
 }
 ?>
 <!DOCTYPE html>
@@ -68,8 +68,6 @@ if(isset($_SESSION['username'])) {
 </head>
 <body>
 
-<!--    Only Index Page for Analytics   -->
-<?php include_once("analyticstracking.php") ?>
 	<!-- TOP BAR -->
 	<div id="top-bar">
 		
@@ -104,7 +102,6 @@ if(isset($_SESSION['username'])) {
 
 	</div> <!-- end header -->
 	
-        <h1 style="margin-left: 440px; font-family: Georgia;     font-weight: bold; font-size:20px; color: #0060BF"><a href="http://posnic.com/" target="blank">Get In Touch With Us &nbsp;&nbsp;&nbsp; <strong style="color: green">WWW.POSNIC.COM</strong></a></h1>
 	
 	<!-- MAIN CONTENT -->
 
@@ -113,6 +110,13 @@ if(isset($_SESSION['username'])) {
 		<form action="checklogin.php" method="POST" id="login-form" class="cmxform" autocomplete="off">
 		
 			<fieldset>
+				<p>
+					<label>
+						<h1 style="font-family: Georgia; font-weight: bold; font-size:20px; color: green;" align="center">
+							POSNIC - Point of Sale
+						</h1>
+					</label>
+				</p>
 				<p> <?php 
 				
 				if(isset($_REQUEST['msg']) && isset($_REQUEST['type']) ) {
@@ -149,37 +153,10 @@ if(isset($_SESSION['username'])) {
 
 			<br/>
                         
-                </form><div style="margin-left: 400px">
-				<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=286371564842269";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+                </form>
 
-<div id="fb-root"></div>
-<div class="fb-like" data-href="https://www.facebook.com/posnic.point.of.sale" data-width="450" data-show-faces="true" data-send="true"></div>
-<div class="g-plusone" data-href="https://plus.google.com/u/0/107268519615804538483"></div> 
-<script type="text/javascript">
-      (function() {
-        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-        po.src = 'https://apis.google.com/js/plusone.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-      })();
-    </script><p>Any Queries email to <a href="mailto:sridhar.posnic@gmail.com?subject=Stock%20Management%20System">sridhar.posnic@gmail.com</a>.</p>
-		
-	</div>
 	</div> <!-- end content -->
-     
-	
-	
-	
-	<!-- FOOTER -->
-	<div id="footer">
 
-	</div> <!-- end footer -->
-        
-       
+
 </body>
 </html>
