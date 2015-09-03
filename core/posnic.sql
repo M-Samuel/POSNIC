@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS `category_details` (
   `category_name` varchar(120) NOT NULL,
   `category_description` varchar(250) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=37 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=20 ;
 
 --
 -- Dumping data for table `category_details`
@@ -70,23 +70,23 @@ CREATE TABLE IF NOT EXISTS `customer_details` (
   `customer_contact2` varchar(100) NOT NULL,
   `balance` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=18 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
 
 --
 -- Dumping data for table `customer_details`
 --
 
 INSERT INTO `customer_details` (`id`, `customer_name`, `customer_address`, `customer_contact1`, `customer_contact2`, `balance`) VALUES
-(8, 'Chandru', 'hsr layout', '7787876786', '989898988', 0),
-(9, 'dhanush', 'hsr layout', '7787876786', '989898988', 0),
-(10, 'bala', 'hsr layout', '7787876786', '989898988', 0),
-(11, 'suraya', 'hsr layout', '7787876786', '989898988', 0),
-(12, 'sridhar', 'hsr layout', '7787876786', '989898988', 0),
-(13, 'jacob', 'hsr layout', '7787876786', '989898988', 80),
-(14, 'sam', 'hsr layout', '7787876786', '989898988', 6240),
-(15, 'nifin', 'hsr layout', '7787876786', '989898988', 0),
-(16, 'jerin', 'hsr layout', '7787876786', '989898988', 1810),
-(17, 'amal', 'hsr layout', '7787876786', '989898988', 0);
+(10, 'Chandru', 'hsr layout', '7787876786', '989898988', 0),
+(11, 'dhanush', 'hsr layout', '7787876786', '989898988', 0),
+(12, 'bala', 'hsr layout', '7787876786', '989898988', 0),
+(13, 'suraya', 'hsr layout', '7787876786', '989898988', 0),
+(14, 'sridhar', 'hsr layout', '7787876786', '989898988', 0),
+(15, 'jacob', 'hsr layout', '7787876786', '989898988', 80),
+(16, 'sam', 'hsr layout', '7787876786', '989898988', 6240),
+(17, 'nifin', 'hsr layout', '7787876786', '989898988', 0),
+(18, 'jerin', 'hsr layout', '7787876786', '989898988', 1810),
+(19, 'amal', 'hsr layout', '7787876786', '989898988', 0);
 
 -- --------------------------------------------------------
 
@@ -99,19 +99,19 @@ CREATE TABLE IF NOT EXISTS `stock_avail` (
   `name` varchar(120) NOT NULL,
   `quantity` int(10) unsigned NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=28 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=20 ;
 
 --
 -- Dumping data for table `stock_avail`
 --
 
 INSERT INTO `stock_avail` (`id`, `name`, `quantity`) VALUES
-(22, 'Cello griper', 290),
-(23, 'techo tip', 900),
-(24, 'cello', 0),
-(25, 'ceParker Urban Fashion ', 0),
-(26, 'Satzuma Diamante Pen', 0),
-(27, 'Lamy Mod 17 Safari Matt ...', 0);
+(20, 'Cello griper', 290),
+(21, 'techo tip', 900),
+(22, 'cello', 0),
+(23, 'ceParker Urban Fashion ', 0),
+(24, 'Satzuma Diamante Pen', 0),
+(25, 'Lamy Mod 17 Safari Matt ...', 0);
 
 -- --------------------------------------------------------
 
@@ -132,19 +132,19 @@ CREATE TABLE IF NOT EXISTS `stock_details` (
   `expire_date` datetime NOT NULL,
   `uom` varchar(120) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=40 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=20 ;
 
 --
 -- Dumping data for table `stock_details`
 --
 
 INSERT INTO `stock_details` (`id`, `stock_id`, `stock_name`, `stock_quatity`, `supplier_id`, `company_price`, `selling_price`, `category`, `date`, `expire_date`, `uom`) VALUES
-(34, 'SD1', 'Cello griper', 0, 'arjun', '9.00', '10.00', 'pen', '2013-08-15 03:01:01', '0000-00-00 00:00:00', ''),
-(35, 'SD35', 'techo tip', 0, 'sadham', '8.00', '10.00', 'pen', '2013-08-15 03:01:50', '0000-00-00 00:00:00', ''),
-(36, 'SD36', 'cello', 0, 'sadham', '7.00', '10.00', 'pen', '2013-08-15 03:02:08', '0000-00-00 00:00:00', ''),
-(37, 'SD37', 'ceParker Urban Fashion ', 0, 'sadham', '1000.00', '1100.00', 'pen', '2013-08-15 03:03:30', '0000-00-00 00:00:00', ''),
-(38, 'SD38', 'Satzuma Diamante Pen', 0, 'sadham', '500.00', '550.00', 'pen', '2013-08-15 03:03:52', '0000-00-00 00:00:00', ''),
-(39, 'SD39', 'Lamy Mod 17 Safari Matt ...', 0, 'sadham', '1980.00', '2000.00', 'pen', '2013-08-15 03:04:17', '0000-00-00 00:00:00', '');
+(20, 'SD1', 'Cello griper', 0, 'arjun', '9.00', '10.00', 'pen', '2013-08-15 03:01:01', '0000-00-00 00:00:00', ''),
+(21, 'SD35', 'techo tip', 0, 'sadham', '8.00', '10.00', 'pen', '2013-08-15 03:01:50', '0000-00-00 00:00:00', ''),
+(22, 'SD36', 'cello', 0, 'sadham', '7.00', '10.00', 'pen', '2013-08-15 03:02:08', '0000-00-00 00:00:00', ''),
+(23, 'SD37', 'ceParker Urban Fashion ', 0, 'sadham', '1000.00', '1100.00', 'pen', '2013-08-15 03:03:30', '0000-00-00 00:00:00', ''),
+(24, 'SD38', 'Satzuma Diamante Pen', 0, 'sadham', '500.00', '550.00', 'pen', '2013-08-15 03:03:52', '0000-00-00 00:00:00', ''),
+(25, 'SD39', 'Lamy Mod 17 Safari Matt ...', 0, 'sadham', '1980.00', '2000.00', 'pen', '2013-08-15 03:04:17', '0000-00-00 00:00:00', '');
 
 -- --------------------------------------------------------
 
@@ -177,24 +177,24 @@ CREATE TABLE IF NOT EXISTS `stock_entries` (
   `count1` int(11) NOT NULL,
   `billnumber` varchar(120) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=272 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=201 ;
 
 --
 -- Dumping data for table `stock_entries`
 --
 
 INSERT INTO `stock_entries` (`id`, `stock_id`, `stock_name`, `stock_supplier_name`, `category`, `quantity`, `company_price`, `selling_price`, `opening_stock`, `closing_stock`, `date`, `username`, `type`, `salesid`, `total`, `payment`, `balance`, `mode`, `description`, `due`, `subtotal`, `count1`, `billnumber`) VALUES
-(261, 'PR3', 'Cello griper', 'arjun', '', 1000, '9.00', '10.00', 0, 1000, '2013-08-15 00:00:00', 'admin', 'entry', '', '9000.00', '9000.00', '0.00', 'cheque', 'uouo', '0000-00-00 00:00:00', 9000, 1, 'BILL-126'),
-(262, 'PR264', 'techo tip', 'Monish', '', 1000, '8.00', '10.00', 0, 1000, '2013-08-15 00:00:00', 'admin', 'entry', '', '8000.00', '8000.00', '0.00', 'cheque', '768768', '0000-00-00 00:00:00', 8000, 1, 'BILL-126'),
-(263, 'SD263', 'Cello griper', '', '', 10, '0.00', '10.00', 1000, 990, '2013-08-15 00:00:00', 'admin', 'sales', 'SD263', '100.00', '0.00', '0.00', '', '', '0000-00-00 00:00:00', 0, 1, 'BILL-126'),
-(264, 'SD264', 'Cello griper', '', '', 100, '0.00', '10.00', 990, 890, '2013-08-15 00:00:00', 'admin', 'sales', 'SD264', '1000.00', '0.00', '0.00', '', '', '0000-00-00 00:00:00', 0, 1, 'BILL-127'),
-(265, 'SD265', 'Cello griper', '', '', 100, '0.00', '10.00', 890, 790, '2013-08-15 00:00:00', 'admin', 'sales', 'SD265', '1000.00', '0.00', '0.00', '', '', '0000-00-00 00:00:00', 0, 1, 'BILL-127'),
-(266, 'SD266', 'Cello griper', '', '', 100, '0.00', '10.00', 790, 690, '2013-08-15 00:00:00', 'admin', 'sales', 'SD266', '1000.00', '0.00', '0.00', '', '', '0000-00-00 00:00:00', 0, 1, 'BILL-127'),
-(267, 'SD267', 'Cello griper', '', '', 100, '0.00', '10.00', 690, 590, '2013-08-15 00:00:00', 'admin', 'sales', 'SD267', '1000.00', '0.00', '0.00', '', '', '0000-00-00 00:00:00', 0, 1, 'BILL-127'),
-(268, 'SD268', 'Cello griper', '', '', 100, '0.00', '10.00', 590, 490, '2013-08-15 00:00:00', 'admin', 'sales', 'SD268', '1000.00', '0.00', '0.00', '', '', '0000-00-00 00:00:00', 0, 1, 'BILL-127'),
-(269, 'SD269', 'Cello griper', '', '', 100, '0.00', '10.00', 490, 390, '2013-08-15 00:00:00', 'admin', 'sales', 'SD269', '1000.00', '0.00', '0.00', '', '', '0000-00-00 00:00:00', 0, 1, 'BILL-127'),
-(270, 'SD270', 'Cello griper', '', '', 100, '0.00', '10.00', 390, 290, '2013-08-15 00:00:00', 'admin', 'sales', 'SD270', '1000.00', '0.00', '0.00', '', '', '0000-00-00 00:00:00', 0, 1, 'BILL-127'),
-(271, 'SD270', 'techo tip', '', '', 100, '0.00', '10.00', 1000, 900, '2013-08-15 00:00:00', 'admin', 'sales', 'SD270', '1000.00', '0.00', '0.00', '', '', '0000-00-00 00:00:00', 0, 2, 'BILL-127');
+(201, 'PR3', 'Cello griper', 'arjun', '', 1000, '9.00', '10.00', 0, 1000, '2013-08-15 00:00:00', 'admin', 'entry', '', '9000.00', '9000.00', '0.00', 'cheque', 'uouo', '0000-00-00 00:00:00', 9000, 1, 'BILL-126'),
+(202, 'PR264', 'techo tip', 'Monish', '', 1000, '8.00', '10.00', 0, 1000, '2013-08-15 00:00:00', 'admin', 'entry', '', '8000.00', '8000.00', '0.00', 'cheque', '768768', '0000-00-00 00:00:00', 8000, 1, 'BILL-126'),
+(203, 'SD263', 'Cello griper', '', '', 10, '0.00', '10.00', 1000, 990, '2013-08-15 00:00:00', 'admin', 'sales', 'SD263', '100.00', '0.00', '0.00', '', '', '0000-00-00 00:00:00', 0, 1, 'BILL-126'),
+(204, 'SD264', 'Cello griper', '', '', 100, '0.00', '10.00', 990, 890, '2013-08-15 00:00:00', 'admin', 'sales', 'SD264', '1000.00', '0.00', '0.00', '', '', '0000-00-00 00:00:00', 0, 1, 'BILL-127'),
+(205, 'SD265', 'Cello griper', '', '', 100, '0.00', '10.00', 890, 790, '2013-08-15 00:00:00', 'admin', 'sales', 'SD265', '1000.00', '0.00', '0.00', '', '', '0000-00-00 00:00:00', 0, 1, 'BILL-127'),
+(206, 'SD266', 'Cello griper', '', '', 100, '0.00', '10.00', 790, 690, '2013-08-15 00:00:00', 'admin', 'sales', 'SD266', '1000.00', '0.00', '0.00', '', '', '0000-00-00 00:00:00', 0, 1, 'BILL-127'),
+(207, 'SD267', 'Cello griper', '', '', 100, '0.00', '10.00', 690, 590, '2013-08-15 00:00:00', 'admin', 'sales', 'SD267', '1000.00', '0.00', '0.00', '', '', '0000-00-00 00:00:00', 0, 1, 'BILL-127'),
+(208, 'SD268', 'Cello griper', '', '', 100, '0.00', '10.00', 590, 490, '2013-08-15 00:00:00', 'admin', 'sales', 'SD268', '1000.00', '0.00', '0.00', '', '', '0000-00-00 00:00:00', 0, 1, 'BILL-127'),
+(209, 'SD269', 'Cello griper', '', '', 100, '0.00', '10.00', 490, 390, '2013-08-15 00:00:00', 'admin', 'sales', 'SD269', '1000.00', '0.00', '0.00', '', '', '0000-00-00 00:00:00', 0, 1, 'BILL-127'),
+(210, 'SD270', 'Cello griper', '', '', 100, '0.00', '10.00', 390, 290, '2013-08-15 00:00:00', 'admin', 'sales', 'SD270', '1000.00', '0.00', '0.00', '', '', '0000-00-00 00:00:00', 0, 1, 'BILL-127'),
+(211, 'SD270', 'techo tip', '', '', 100, '0.00', '10.00', 1000, 900, '2013-08-15 00:00:00', 'admin', 'sales', 'SD270', '1000.00', '0.00', '0.00', '', '', '0000-00-00 00:00:00', 0, 2, 'BILL-127');
 
 -- --------------------------------------------------------
 
@@ -228,7 +228,7 @@ CREATE TABLE IF NOT EXISTS `stock_sales` (
   `count1` int(11) NOT NULL,
   `billnumber` varchar(120) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=29 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=20 ;
 
 --
 -- Dumping data for table `stock_sales`
@@ -258,7 +258,7 @@ CREATE TABLE IF NOT EXISTS `stock_user` (
   `user_type` varchar(20) NOT NULL,
   `answer` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `stock_user`
@@ -307,25 +307,25 @@ CREATE TABLE IF NOT EXISTS `supplier_details` (
   `supplier_contact2` varchar(100) NOT NULL,
   `balance` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=49 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=20 ;
 
 --
 -- Dumping data for table `supplier_details`
 --
 
 INSERT INTO `supplier_details` (`id`, `supplier_name`, `supplier_address`, `supplier_contact1`, `supplier_contact2`, `balance`) VALUES
-(37, 'Rahul', '#123,2nd sector ,hsr layout,nbangalore', '7787876786', '89798', 0),
-(38, 'Monish', '#124,2nd sector,hsr layout,bangalore', '7787876786', '9539126325', 0),
-(39, 'kiran', '#126,2nd sector,hsr layout,bangalore', '7787876786', '9539126325', 0),
-(40, 'arjun', '#126,2nd sector,hsr layout,bangalore', '7787876786', '9539126325', 0),
-(41, 'libin', '#126,2nd sector,hsr layout,bangalore', '7787876786', '9539126325', 0),
-(42, 'sadham', '#126,2nd sector,hsr layout bangalore', '7787876786', '9539126325', 0),
-(43, 'alex', '#126,2nd sector,hsr layout bangalore', '7787876786', '9539126325', 0),
-(44, 'arun', '#126,2nd sector,hsr layout bangalore', '7787876786', '9539126325', 0),
-(45, 'sachu', '#126,2nd sector,hsr layout bangalore', '7787876786', '9539126325', 0),
-(46, 'nijan', '#126,2nd sector,hsr layout bangalore', '7787876786', '9539126325', 0),
-(47, 'karthik', '#126,2nd sector,hsr layout bangalore', '7787876786', '9539126325', 0),
-(48, 'santhosh', '#126,2nd sector,hsr layout bangalore', '7787876786', '9539126325', 0);
+(20, 'Rahul', '#123,2nd sector ,hsr layout,nbangalore', '7787876786', '89798', 0),
+(21, 'Monish', '#124,2nd sector,hsr layout,bangalore', '7787876786', '9539126325', 0),
+(22, 'kiran', '#126,2nd sector,hsr layout,bangalore', '7787876786', '9539126325', 0),
+(23, 'arjun', '#126,2nd sector,hsr layout,bangalore', '7787876786', '9539126325', 0),
+(24, 'libin', '#126,2nd sector,hsr layout,bangalore', '7787876786', '9539126325', 0),
+(25, 'sadham', '#126,2nd sector,hsr layout bangalore', '7787876786', '9539126325', 0),
+(26, 'alex', '#126,2nd sector,hsr layout bangalore', '7787876786', '9539126325', 0),
+(27, 'arun', '#126,2nd sector,hsr layout bangalore', '7787876786', '9539126325', 0),
+(28, 'sachu', '#126,2nd sector,hsr layout bangalore', '7787876786', '9539126325', 0),
+(29, 'nijan', '#126,2nd sector,hsr layout bangalore', '7787876786', '9539126325', 0),
+(30, 'karthik', '#126,2nd sector,hsr layout bangalore', '7787876786', '9539126325', 0),
+(31, 'santhosh', '#126,2nd sector,hsr layout bangalore', '7787876786', '9539126325', 0);
 
 -- --------------------------------------------------------
 
@@ -346,7 +346,7 @@ CREATE TABLE IF NOT EXISTS `transactions` (
   `rid` varchar(120) NOT NULL,
   `receiptid` varchar(200) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
 
 -- --------------------------------------------------------
 
@@ -355,7 +355,7 @@ CREATE TABLE IF NOT EXISTS `transactions` (
 --
 
 CREATE TABLE IF NOT EXISTS `uom_details` (
-  `id` int(10) unsigned zerofill NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(120) NOT NULL,
   `spec` varchar(120) NOT NULL,
   PRIMARY KEY (`id`)
@@ -366,10 +366,10 @@ CREATE TABLE IF NOT EXISTS `uom_details` (
 --
 
 INSERT INTO `uom_details` (`id`, `name`, `spec`) VALUES
-(0000000006, 'UOM1', 'UOM1 Specification'),
-(0000000007, 'UOM2', 'UOM2 Specification'),
-(0000000008, 'UOM3', 'UOM3 Specification'),
-(0000000009, 'UOM4', 'UOM4 Specification');
+(10, 'UOM1', 'UOM1 Specification'),
+(11, 'UOM2', 'UOM2 Specification'),
+(12, 'UOM3', 'UOM3 Specification'),
+(13, 'UOM4', 'UOM4 Specification');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
