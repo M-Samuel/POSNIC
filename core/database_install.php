@@ -100,43 +100,45 @@ document.getElementById("name").disabled=true;
 	
 	<!-- MAIN CONTENT -->
 	<div id="content">
-	<?php
-         if((isset($_POST['host']) and isset($_POST['username']) and $_POST['host']!="" and $_POST['username']!="") or (isset($_SESSION['host']) and isset($_SESSION['user'])))
-        {
-          
-            if(isset($_SESSION['host'])){
-            $host= $_SESSION['host'];
-            $user=$_SESSION['user'];
-            $pass=$_SESSION['pass'];
-            }
-               if(isset($_POST['host'])){
-            $host=  trim($_POST['host']);
-            $user= trim($_POST['username']);
-            $pass= trim($_POST['password']); 
-             }
-                        $link = mysql_connect("$host","$user","$pass");
-if (!$link) {
-    $data="Database Configration is Not vaild";
-      header("Location: install.php?msg=$data");
-      exit;
-}
+<?php
+if((isset($_POST['host']) and isset($_POST['username']) and $_POST['host']!="" and $_POST['username']!="") or (isset($_SESSION['host']) and isset($_SESSION['user'])))
+{
+	if(isset($_SESSION['host'])){
+		$host= $_SESSION['host'];
+		$user= $_SESSION['user'];
+		$pass= $_SESSION['pass'];
+	} elseif (isset($_POST['host'])){
+		$host= trim($_POST['host']);
+		$user= trim($_POST['username']);
+		$pass= trim($_POST['password']); 
+	}
+	$link = mysql_connect("$host","$user","$pass");
+	if (!$link) {
+		$data="Database Configuration is Not vaild";
+//		header("Location: install.php?msg=$data");
 
-        ?>
+		include_once "safe_redirect.php";
+		safeRedirect("install.php?msg=$data");
+
+		exit;
+	}
+?>
 		<form action="setup_page.php" method="POST" id="login-form" class="cmxform" autocomplete="off">
 		
                     <fieldset  >
-				<p> <?php 
+				<p>
+<?php 
 				
 				if(isset($_REQUEST['msg'])) {
 					
 					$msg=$_REQUEST['msg'];
 					echo "<p style=color:red>$msg</p>";						
 				}
-				?>
+?>
 				
 				</p>
 				<p>
-                                    <?php 
+<?php 
                                     $con=mysqli_connect("$host","$user","$pass");
                             // Check connection
                                  $sql="CREATE DATABASE MY_posnic_1234";
@@ -147,23 +149,18 @@ if (!$link) {
                                     ?>
                                     <input type="radio" value="1" name="select[]"  id="create" onclick="create_data()" >Create New DataBase
                                         <input type="text" id="name" class="round full-width-input" name="name" autofocus  />
-				<?php 
-                                  }else{
-                                      ?>
+<?php } else { ?>
                                           
                                         <input type="radio"  disabled="disabled"  >Create New DataBase
                                          <input type="text" disabled="disabled" class="round full-width-input" placeholder="No Permission To Create New Database" name="name" autofocus  /> 
-                                          <?php
-                                  }
-                                  ?>
+<?php } ?>
                                 
                                 
                                 </p>
 				<p>					
                                     <input type="radio" name="select[]" id="select" onclick="select_data()" >Select Created DataBase<br>
                                     <select name="select_box" class="round full-width-input" id="select_box" style="padding: 5px 10px 5px 10px; border: 1px solid #D9DBDD;">
-                                    <?php 
-
+<?php 
 
 $dbh = new PDO( "mysql:host=$host", $user, $pass );
 $dbs = $dbh->query( 'SHOW DATABASES' );
@@ -172,7 +169,7 @@ while( ( $db = $dbs->fetchColumn( 0 ) ) !== false )
 {
     echo "<option value=".$db." style=margin:10px 10px 10px 10px;><p >$db</p></option>";
 }
-                                       ?>
+?>
                                       </select> 
                                    
 				</p>
@@ -194,7 +191,7 @@ while( ( $db = $dbs->fetchColumn( 0 ) ) !== false )
 		</form>
 		
 	</div> <!-- end content -->
-	  <?php } ?>
+<?php } ?>
       
 </body>
 </html>
