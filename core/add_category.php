@@ -96,7 +96,7 @@ include_once("init.php");
 
 			<div class="side-menu fl">
 				
-				<h3>supplier Management</h3>
+				<h3>Supplier Management</h3>
 				<ul>
 					<li><a href="add_stock.php">Add Stock/Product</a></li>
 					<li><a href="view_product.php">View Stock/Product</a></li>
@@ -125,75 +125,54 @@ include_once("init.php");
 					//Gump is libarary for Validation
 					
 					if(isset($_POST['name'])){
-					$_POST = $gump->sanitize($_POST);
-					$gump->validation_rules(array(
-						'name'    	  => 'required|max_len,100|min_len,3',
-						'address'     => 'max_len,200',
-
-					));
+						$_POST = $gump->sanitize($_POST);
+						$gump->validation_rules(array(
+							'name'    	  => 'required|max_len,100|min_len,3',
+							'address'     => 'max_len,200',
+						));
 				
-					$gump->filter_rules(array(
-						'name'    	  => 'trim|sanitize_string|mysql_escape',
-						'address'     => 'trim|sanitize_string|mysql_escape',
-
-					));
+						$gump->filter_rules(array(
+							'name'    	  => 'trim|sanitize_string|mysql_escape',
+							'address'     => 'trim|sanitize_string|mysql_escape',
+						));
 				
-					$validated_data = $gump->run($_POST);
-					$name 		= "";
-					$address 	= "";
-			
+						$validated_data = $gump->run($_POST);
+						$name 		= "";
+						$address 	= "";
 
-					if($validated_data === false) {
+						if($validated_data === false) {
 							echo $gump->get_readable_errors(true);
-					} else {
-						
-						
+						} else {
+
 							$name=mysql_real_escape_string($_POST['name']);
 							$address=mysql_real_escape_string($_POST['address']);
-							
-						
-						$count = $db->countOf("category_details", "category_name='$name'");
-		if($count==1)
-			{
-		echo "<font color=red> Dublicat Entry. Please Verify</font>";
-			}
-			else
-			{
-				
-			if($db->query("insert into category_details values(NULL,'$name','$address')")){
-			
-                           $msg="  $name  Category Details Added" ;
-				header("Location: add_category.php?msg=$msg");  
-                        }
-			else
-			echo "<br><font color=red size=+1 >Problem in Adding !</font>" ;
-			
-			}
-			
-			
-			}
-							
+							$count = $db->countOf("category_details", "category_name='$name'");
+							if($count==1)
+							{
+								echo "<font color=red> Duplicate Entry. Please Verify</font>";
+							} else {
+								if($db->query("insert into category_details values(NULL,'$name','$address')")) {
+									$msg="  $name  Category Details Added" ;
+									header("Location: add_category.php?msg=$msg");  
+								} else
+									echo "<br><font color=red size=+1 >Problem in Adding !</font>" ;
 							}
+						}
+					}
 						
-				  if(isset($_GET['msg'])){
-                                             $data=$_GET['msg'];
-                                            $msg='<p style=color:#153450;font-family:gfont-family:Georgia, Times New Roman, Times, serif>'.$data.'</p>';//
-                                            ?>
+					if(isset($_GET['msg'])){
+                        $data=$_GET['msg'];
+                        $msg='<p style=color:#153450;font-family:gfont-family:Georgia, Times New Roman, Times, serif>'.$data.'</p>';//
+?>
                                                     
- <script  src="dist/js/jquery.ui.draggable.js"></script>
+<script  src="dist/js/jquery.ui.draggable.js"></script>
 <script src="dist/js/jquery.alerts.js"></script>
 <script src="dist/js/jquery.js"></script>
 <link rel="stylesheet"  href="dist/js/jquery.alerts.css" >
-                                                  
-                                            <script type="text/javascript">
-	
-					jAlert('<?php echo  $msg; ?>', 'POSNIC');
-			
+<script type="text/javascript">
+	jAlert('<?php echo  $msg; ?>', 'POSNIC');
 </script>
-                                                        <?php
-                                         }
-				
-				?>
+<?php } ?>
 				
 				<form name="form1" method="post" id="form1" action="">
                   

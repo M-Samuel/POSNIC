@@ -4,32 +4,31 @@ include_once("init.php");
 					//Gump is libarary for Validation
 					
 					if(isset($_POST['name'])){
-					$_POST = $gump->sanitize($_POST);
-					$gump->validation_rules(array(
-						'name'    	  => 'required|max_len,100|min_len,3',
-						'address'     => 'max_len,200',
-						'contact1'    => 'alpha_numeric|max_len,20',
-						'contact2'    => 'alpha_numeric|max_len,20'
-					));
-				
-					$gump->filter_rules(array(
-						'name'    	  => 'trim|sanitize_string|mysql_escape',
-						'address'     => 'trim|sanitize_string|mysql_escape',
-						'contact1'    => 'trim|sanitize_string|mysql_escape',
-						'contact2'    => 'trim|sanitize_string|mysql_escape'
-					));
-				
-					$validated_data = $gump->run($_POST);
-					$name 		= "";
-					$address 	= "";
-					$contact1	= "";
-					$contact2 	= "";				
+						$_POST = $gump->sanitize($_POST);
+						$gump->validation_rules(array(
+							'name'    	  => 'required|max_len,100|min_len,3',
+							'address'     => 'max_len,200',
+							'contact1'    => 'alpha_numeric|max_len,20',
+							'contact2'    => 'alpha_numeric|max_len,20'
+						));
 
-					if($validated_data === false) {
+						$gump->filter_rules(array(
+							'name'    	  => 'trim|sanitize_string|mysql_escape',
+							'address'     => 'trim|sanitize_string|mysql_escape',
+							'contact1'    => 'trim|sanitize_string|mysql_escape',
+							'contact2'    => 'trim|sanitize_string|mysql_escape'
+						));
+
+						$validated_data = $gump->run($_POST);
+						$name 		= "";
+						$address 	= "";
+						$contact1	= "";
+						$contact2 	= "";				
+
+						if($validated_data === false) {
 							echo $gump->get_readable_errors(true);
-					} else {
-						
-						
+						} else {
+
 							$name=mysql_real_escape_string($_POST['name']);
 							$address=mysql_real_escape_string($_POST['address']);
 							$contact1=mysql_real_escape_string($_POST['contact1']);
@@ -38,36 +37,28 @@ include_once("init.php");
 							$count = $db->countOf("customer_details", "customer_name='$name'");
 							if($count==1)
 							{
-
-                                                                                                       $data='Dublicat Entry. Please Verify';
-                                            $msg='<p style=color:red;font-family:gfont-family:Georgia, Times New Roman, Times, serif>'.$data.'</p>';//
-                                            ?>
+                                $data='Duplicate Entry. Please Verify';
+                                $msg='<p style=color:red;font-family:gfont-family:Georgia, Times New Roman, Times, serif>'.$data.'</p>';//
+?>
                                                     
- <script  src="dist/js/jquery.ui.draggable.js"></script>
+<script  src="dist/js/jquery.ui.draggable.js"></script>
 <script src="dist/js/jquery.alerts.js"></script>
 <script src="dist/js/jquery.js"></script>
 <link rel="stylesheet"  href="dist/js/jquery.alerts.css" >
                                                   
-                                            <script type="text/javascript">
-	
-					jAlert('<?php echo  $msg; ?>', 'POSNIC');
-			
+<script type="text/javascript">
+	jAlert('<?php echo  $msg; ?>', 'POSNIC');
 </script>
-                                                        <?php
-                                      
-							}
-							else
-							{
+<?php
+							} else {
 								
-									if($db->query("insert into customer_details values(NULL,'$name','$address','$contact1','$contact2',0)"))
-                                                                        {
-                                                                             $msg=" $name Customer Details Added " ;
-				header("Location: add_customer.php?msg=$msg");
-                                exit();
-                                                                        }
-									else
-										echo "<div class='error-box round'>Problem in Adding !</div>" ;
-							
+								if($db->query("insert into customer_details values(NULL,'$name','$address','$contact1','$contact2',0)"))
+                                {
+                                    $msg=" $name Customer Details Added " ;
+									header("Location: add_customer.php?msg=$msg");
+									exit();
+                                } else
+									echo "<div class='error-box round'>Problem in Adding !</div>" ;
 							}
 						}
 				}
@@ -229,11 +220,11 @@ div.pagination span.current {
 				name: {
 					required: true,
 					minlength: 3,
-					maxlength: 200
+					maxlength: 100
 				},
 				address: {
 					minlength: 3,
-					maxlength: 500
+					maxlength: 200
 				},
 				contact1: {
 					minlength: 3,
@@ -325,28 +316,23 @@ div.pagination span.current {
 						<div class="content-module-main cf">
 				
 							
-					<?php
+<?php
 						
 				
 					//Gump is libarary for Validation
-					 if(isset($_GET['msg'])){
-                                                                              $data=$_GET['msg'];
-                                            $msg='<p style=color:#153450;font-family:gfont-family:Georgia, Times New Roman, Times, serif>'.$data.'</p>';//
-                                            ?>
+					 if(isset($_GET['msg'])) {
+                            $data=$_GET['msg'];
+                            $msg='<p style=color:#153450;font-family:gfont-family:Georgia, Times New Roman, Times, serif>'.$data.'</p>';//
+?>
                                                     
- <script  src="dist/js/jquery.ui.draggable.js"></script>
+<script  src="dist/js/jquery.ui.draggable.js"></script>
 <script src="dist/js/jquery.alerts.js"></script>
 <script src="dist/js/jquery.js"></script>
 <link rel="stylesheet"  href="dist/js/jquery.alerts.css" >
-                                                  
-                                            <script type="text/javascript">
-	
-					jAlert('<?php echo  $msg; ?>', 'POSNIC');
-			
+<script type="text/javascript">
+	jAlert('<?php echo  $msg; ?>', 'POSNIC');
 </script>
-                                                        <?php
-                                        }
-				?>
+<?php } ?>
 				
 				<form name="form1" method="post" id="form1" action="">
                   
@@ -356,7 +342,7 @@ div.pagination span.current {
                       <td><span class="man">*</span>Name:</td>
                       <td><input name="name" placeholder="ENTER YOUR FULL NAME" type="text" id="name" maxlength="200"  class="round default-width-input" value="<?php echo $name; ?>" /></td>
                      <td>Contact 1 </td>
-                      <td><input name="contact1" placeholder="ENTER YOUR ADDRESS contact1"type="text" id="buyingrate" maxlength="20"   class="round default-width-input" 
+                      <td><input name="contact1" placeholder="ENTER YOUR contact1"type="text" id="buyingrate" maxlength="20"   class="round default-width-input" 
 					  value="<?php echo $contact1; ?>" /></td>
                     </tr>
                     <tr>

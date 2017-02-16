@@ -30,11 +30,11 @@ include_once("init.php");
 				name: {
 					required: true,
 					minlength: 3,
-					maxlength: 200
+					maxlength: 100
 				},
 				address: {
 					minlength: 3,
-					maxlength: 500
+					maxlength: 200
 				},
 				contact1: {
 					minlength: 3,

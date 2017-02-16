@@ -159,7 +159,7 @@ function numbersonly(e){
 					<div class="content-module-main cf">
 				
 							
-					<?php
+<?php
 					//Gump is libarary for Validation
 					
 					if(isset($_POST['name'])){
@@ -209,19 +209,16 @@ function numbersonly(e){
 						$count = $db->countOf("stock_details", "stock_name ='$name'");
 		if($count>1)
 			{
-	        $data='Dublicat Entry. Please Verify';
-                                            $msg='<p style=color:red;font-family:gfont-family:Georgia, Times New Roman, Times, serif>'.$data.'</p>';//
-                                            ?>
+				$data='Duplicate Entry. Please Verify';
+				$msg='<p style=color:red;font-family:gfont-family:Georgia, Times New Roman, Times, serif>'.$data.'</p>';//
+?>
                                                     
- <script  src="dist/js/jquery.ui.draggable.js"></script>
+<script  src="dist/js/jquery.ui.draggable.js"></script>
 <script src="dist/js/jquery.alerts.js"></script>
 <script src="dist/js/jquery.js"></script>
 <link rel="stylesheet"  href="dist/js/jquery.alerts.css" >
-                                                  
-                                            <script type="text/javascript">
-	
-					jAlert('<?php echo  $msg; ?>', 'POSNIC');
-			
+<script type="text/javascript">
+	jAlert('<?php echo  $msg; ?>', 'POSNIC');
 </script>
 <?php
 			}

@@ -1,6 +1,5 @@
 <?php
 include_once("init.php");
-
 ?>
 <!DOCTYPE html>
 
@@ -170,21 +169,18 @@ include_once("init.php");
 						$count = $db->countOf("supplier_details", "supplier_name='$name'");
 		if($count==1)
 			{
-	                                     $data='Dublicat Entry. Please Verify';
-                                            $msg='<p style=color:red;font-family:gfont-family:Georgia, Times New Roman, Times, serif>'.$data.'</p>';//
-                                            ?>
+	            $data='Duplicate Entry. Please Verify';
+                $msg='<p style=color:red;font-family:gfont-family:Georgia, Times New Roman, Times, serif>'.$data.'</p>';//
+?>
                                                     
  <script  src="dist/js/jquery.ui.draggable.js"></script>
 <script src="dist/js/jquery.alerts.js"></script>
 <script src="dist/js/jquery.js"></script>
 <link rel="stylesheet"  href="dist/js/jquery.alerts.css" >
-                                                  
-                                            <script type="text/javascript">
-	
-					jAlert('<?php echo  $msg; ?>', 'POSNIC');
-			
+<script type="text/javascript">
+	jAlert('<?php echo  $msg; ?>', 'POSNIC');
 </script>
-                                                        <?php
+<?php
                                       
 			}
 			else
@@ -207,23 +203,18 @@ include_once("init.php");
 						
 				//Gump is libarary for Validation
                                          if(isset($_GET['msg'])){
-                                             $data=$_GET['msg'];
+                                            $data=$_GET['msg'];
                                             $msg='<p style=color:#153450;font-family:gfont-family:Georgia, Times New Roman, Times, serif>'.$data.'</p>';//
-                                            ?>
+?>
                                                     
- <script  src="dist/js/jquery.ui.draggable.js"></script>
+<script  src="dist/js/jquery.ui.draggable.js"></script>
 <script src="dist/js/jquery.alerts.js"></script>
 <script src="dist/js/jquery.js"></script>
 <link rel="stylesheet"  href="dist/js/jquery.alerts.css" >
-                                                  
-                                            <script type="text/javascript">
-	
-					jAlert('<?php echo  $msg; ?>', 'POSNIC');
-			
+<script type="text/javascript">
+	jAlert('<?php echo  $msg; ?>', 'POSNIC');
 </script>
-                                                        <?php
-                                         }
-				?>
+<?php } ?>
 				
 				<form name="form1" method="post" id="form1" action="">
                   

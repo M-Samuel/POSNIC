@@ -1,47 +1,48 @@
-<?php session_start();
- if(isset($_POST['host']) and isset($_POST['username']) and $_POST['host']!="" and $_POST['username']!="")
-        {
-            $host=  trim($_POST['host']);
-            $user= trim($_POST['username']);
-            $pass= trim($_POST['password']); 
-            $name;
-            if(isset($_POST['name'])){
-                $name=$_POST['name'];
-            }
-            if(isset($_POST['select_box'])){
-                $name=$_POST['select_box'];
-            }
-            $_SESSION['host']=$host;
-            $_SESSION['user']=$user;
-            $_SESSION['pass']=$pass;
-            $_SESSION['db_name']=$name;
-                    $link = mysql_connect("$host","$user","$pass");
-if (!$link) {
-    $data="Database Configuration is Not vaild";
-      header("Location: install.php?msg=$data");
-      exit;
-}
+<?php
+session_start();
+if(isset($_POST['host']) and isset($_POST['username']) and $_POST['host']!="" and $_POST['username']!="")
+{
+    $host=  trim($_POST['host']);
+    $user= trim($_POST['username']);
+    $pass= trim($_POST['password']); 
+    $name;
+    if(isset($_POST['name'])){
+        $name=$_POST['name'];
+    }
+    if(isset($_POST['select_box'])){
+        $name=$_POST['select_box'];
+    }
+    $_SESSION['host']=$host;
+    $_SESSION['user']=$user;
+    $_SESSION['pass']=$pass;
+    $_SESSION['db_name']=$name;
+    $link = mysql_connect("$host","$user","$pass");
+	if (!$link) {
+		$data="Database Configuration is Not vaild";
+		header("Location: install.php?msg=$data");
+		exit;
+	}
 
-$con=mysqli_connect("$host","$user","$pass");
-// Check connection
- if(isset($_POST['name'])){
-$sql="CREATE DATABASE $name";
-if (!mysqli_query($con,$sql)){
-    $data="This Database Name Is Already In the DataBase";
-      header("Location: database_install.php?msg=$data");
-      exit;
-}
- }
+	$con=mysqli_connect("$host","$user","$pass");
+	// Check connection
+	if(isset($_POST['name'])){
+		$sql="CREATE DATABASE $name";
+		if (!mysqli_query($con,$sql)){
+			$data="This Database Name Is Already In the DataBase";
+			header("Location: database_install.php?msg=$data");
+			exit;
+		}
+	}
         
-        $con=mysqli_connect("$host","$user","$pass","$name");
-if (mysqli_connect_errno())
-  {
-  echo "Failed to connect to MySQL: " . mysqli_connect_error();
-  }
-  $dummy=0;
-if(isset($_POST['dummy'])){
-    $dummy=1;
-}
+    $con=mysqli_connect("$host","$user","$pass","$name");
+	if (mysqli_connect_errno())
+	{
+		echo "Failed to connect to MySQL: " . mysqli_connect_error();
+	}
+	$dummy=0;
+	if(isset($_POST['dummy'])){
+		$dummy=1;
+	}
 // Create table
 $sql="CREATE TABLE IF NOT EXISTS `category_details` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -78,10 +79,10 @@ mysqli_query($con,$sql);
 
 $sql="CREATE TABLE IF NOT EXISTS `customer_details` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `customer_name` varchar(200) NOT NULL,
-  `customer_address` varchar(500) NOT NULL,
-  `customer_contact1` varchar(100) NOT NULL,
-  `customer_contact2` varchar(100) NOT NULL,
+  `customer_name` varchar(100) NOT NULL,
+  `customer_address` varchar(200) NOT NULL,
+  `customer_contact1` varchar(20) NOT NULL,
+  `customer_contact2` varchar(20) NOT NULL,
   `balance` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ";
@@ -367,8 +368,7 @@ $ourFileHandle = fopen($ourFileName, 'w') or die("can't open file");
 $data = '<?php $config["database"] = "'.$name.'"; $config["host"]= "'.$host.'";$config["username"]= "'.$user.'"; $config["password"]= "'.$pass.'";?>';
 fwrite($ourFileHandle, $data);
 fclose($ourFileHandle);
- header("Location: user_details.php");
-
+header("Location: user_details.php");
 
 } else {
 	header("Location: install.php");
