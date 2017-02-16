@@ -133,7 +133,7 @@ include_once("init.php");
 				
 							
 					<?php
-					//Gump is libarary for Validatoin
+					//Gump is libarary for Validation
 					
 					if(isset($_POST['name'])){
 					$_POST = $gump->sanitize($_POST);
