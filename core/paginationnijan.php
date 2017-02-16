@@ -430,11 +430,11 @@ if(isset($_GET['limit']))
 
 		if ($page > 1) 
 
-			$pagination.= "<a href=\"$targetpage?page=$prev&limit=$limit\">« previous</a>";
+			$pagination.= "<a href=\"$targetpage?page=$prev&limit=$limit\">  previous</a>";
 
 		else
 
-			$pagination.= "<span class=\"disabled\">« previous</span>";	
+			$pagination.= "<span class=\"disabled\">  previous</span>";	
 
 		
 
@@ -562,11 +562,11 @@ if(isset($_GET['limit']))
 
 		if ($page < $counter - 1) 
 
-			$pagination.= "<a href=\"$targetpage?page=$next&limit=$limit\">next »</a>";
+			$pagination.= "<a href=\"$targetpage?page=$next&limit=$limit\">next  </a>";
 
 		else
 
-			$pagination.= "<span class=\"disabled\">next »</span>";
+			$pagination.= "<span class=\"disabled\">next  </span>";
 
 		$pagination.= "</div>\n";		
 
@@ -607,7 +607,7 @@ if(isset($_GET['limit']))
 </table>
   <tr>
 
-        <td align="center"><div style="margin-left:20px;"><div class="pagination"><a href="paginationnijan.php?page=4&limit=1">« previous</a><a href="paginationnijan.php?page=1&limit=1">1</a><a href="paginationnijan.php?page=2&limit=1">2</a><a href="paginationnijan.php?page=3&limit=1">3</a><a href="paginationnijan.php?page=4&limit=1">4</a>5<a href="paginationnijan.php?page=6&limit=1">6</a><a href="paginationnijan.php?page=7&limit=1">7</a><a href="paginationnijan.php?page=8&limit=1">8</a><a href="paginationnijan.php?page=6&limit=1">next »</a></div>
+        <td align="center"><div style="margin-left:20px;"><div class="pagination"><a href="paginationnijan.php?page=4&limit=1">  previous</a><a href="paginationnijan.php?page=1&limit=1">1</a><a href="paginationnijan.php?page=2&limit=1">2</a><a href="paginationnijan.php?page=3&limit=1">3</a><a href="paginationnijan.php?page=4&limit=1">4</a>5<a href="paginationnijan.php?page=6&limit=1">6</a><a href="paginationnijan.php?page=7&limit=1">7</a><a href="paginationnijan.php?page=8&limit=1">8</a><a href="paginationnijan.php?page=6&limit=1">next  </a></div>
 </div></td>
 
       </tr>

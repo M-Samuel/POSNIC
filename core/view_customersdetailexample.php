@@ -469,11 +469,11 @@ if(isset($_GET['limit']))
 
 		if ($page > 1) 
 
-			$pagination.= "<a href=\"$targetpage?page=$prev&limit=$limit\">� previous</a>";
+			$pagination.= "<a href=\"$targetpage?page=$prev&limit=$limit\">    previous</a>";
 
 		else
 
-			$pagination.= "<span class=\"disabled\">� previous</span>";	
+			$pagination.= "<span class=\"disabled\">    previous</span>";	
 
 		
 
@@ -601,11 +601,11 @@ if(isset($_GET['limit']))
 
 		if ($page < $counter - 1) 
 
-			$pagination.= "<a href=\"$targetpage?page=$next&limit=$limit\">next �</a>";
+			$pagination.= "<a href=\"$targetpage?page=$next&limit=$limit\">next    </a>";
 
 		else
 
-			$pagination.= "<span class=\"disabled\">next �</span>";
+			$pagination.= "<span class=\"disabled\">next    </span>";
 
 		$pagination.= "</div>\n";		
 

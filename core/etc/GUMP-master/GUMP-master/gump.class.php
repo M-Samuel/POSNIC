@@ -462,7 +462,7 @@ class GUMP
 	 */
 	protected function filter_rmpunctuation($value, $params = NULL)
 	{
-		return preg_replace("/(?![.=$'€%-])\p{P}/u", '', $value);
+		return preg_replace("/(?![.=$'   %-])\p{P}/u", '', $value);
 	}
 	
 	/**
@@ -832,7 +832,7 @@ class GUMP
 			return;
 		}
 		
-		if(!preg_match("/^([a-zÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðòóôõöùúûüýÿ])+$/i", $input[$field]) !== FALSE)
+		if(!preg_match("/^([a-z                                                                                                        ])+$/i", $input[$field]) !== FALSE)
 		{
 			return array(
 				'field' => $field,
@@ -860,7 +860,7 @@ class GUMP
 			return;
 		}
 		
-		if(!preg_match("/^([a-z0-9ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðòóôõöùúûüýÿ])+$/i", $input[$field]) !== FALSE)
+		if(!preg_match("/^([a-z0-9                                                                                                        ])+$/i", $input[$field]) !== FALSE)
 		{
 			return array(
 				'field' => $field,
@@ -888,7 +888,7 @@ class GUMP
 			return;
 		}
 		
-		if(!preg_match("/^([a-z0-9ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðòóôõöùúûüýÿ_-])+$/i", $input[$field]) !== FALSE)
+		if(!preg_match("/^([a-z0-9                                                                                                        _-])+$/i", $input[$field]) !== FALSE)
 		{
 			return array(
 				'field' => $field,
@@ -1255,7 +1255,7 @@ class GUMP
 			return;
 		}
 		
-	    if(!preg_match("/^([a-zÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïñðòóôõöùúûüýÿ '-])+$/i", $input[$field]) !== FALSE)
+	    if(!preg_match("/^([a-z                                                                                                           '-])+$/i", $input[$field]) !== FALSE)
 	    {
 	        return array(
 	            'field' => $field,
