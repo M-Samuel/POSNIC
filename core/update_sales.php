@@ -424,7 +424,7 @@ document.getElementById('payable_amount').value=parseFloat(document.getElementBy
 					<li><a href="view_sales.php">View Sales</a></li>
 					
 				</ul>
-				                                                              
+
 			</div> <!-- end side-menu -->
 			
 			<div class="side-content fr">
@@ -630,7 +630,7 @@ document.getElementById('payable_amount').value=parseFloat(document.getElementBy
                          <tr >
                           <td>Item:</td>
                            <td> &nbsp;</td>
-                           
+
                            <td> &nbsp;</td>
                            <td> &nbsp;</td>
                           <td>Quantity:</td>                      

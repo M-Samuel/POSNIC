@@ -114,7 +114,7 @@ include_once("init.php");
 					<li><a href="add_supplier.php">Add Supplier</a></li>
 					<li><a href="view_supplier.php">View Supplier</a></li>
 				</ul>
-				                                                     
+
 			</div> <!-- end side-menu -->
 			
 			<div class="side-content fr">
@@ -205,7 +205,7 @@ include_once("init.php");
 							
 							}
 						
-				//Gump is libarary for Validatoin
+				//Gump is libarary for Validation
                                          if(isset($_GET['msg'])){
                                              $data=$_GET['msg'];
                                             $msg='<p style=color:#153450;font-family:gfont-family:Georgia, Times New Roman, Times, serif>'.$data.'</p>';//

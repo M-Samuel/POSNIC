@@ -1,6 +1,6 @@
-<?php session_start();
+<?php
+	session_start();
 	include("lib/db.class.php");
-       
 	       $host=$_SESSION['host'] ;
             $user=$_SESSION['user'];
             $pass=$_SESSION['pass'];
@@ -207,16 +207,17 @@ if ((($_FILES["file"]["type"] == "image/gif")
             $host=$_SESSION['host'] ;
             $user=$_SESSION['user'];
             $pass=$_SESSION['pass'];
-           $name=$_SESSION['db_name'];
+            $name=$_SESSION['db_name'];
             $con=mysqli_connect("$host","$user","$pass","$name");
-        $name=$_POST['sname'];
-    $address=$_POST['address'];
-    $place=$_POST['place'];
-    $city=$_POST['city'];
-    $phone=$_POST['phone'];
-    $web=$_POST['website'];
-    $email=$_POST['email'];
-    $pin=$_POST['pin'];
+
+            $name   =$_POST['sname'];
+            $address=$_POST['address'];
+            $place  =$_POST['place'];
+            $city   =$_POST['city'];
+            $phone  =$_POST['phone'];
+            $web    =$_POST['website'];
+            $email  =$_POST['email'];
+            $pin    =$_POST['pin'];
     
 
     $db->query("UPDATE store_details  SET pin='".$pin."',city='".$city."',name='".$name."',email='".$email."',web='".$web."',address='".$address."',place='".$place."',phone='".$phone."' ");

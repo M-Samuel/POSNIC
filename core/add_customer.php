@@ -307,18 +307,7 @@ div.pagination span.current {
 					<li><a href="add_customer.php">Add Customer</a></li>
 					<li><a href="view_customers.php">View Customers</a></li>
 				</ul>
-				        <div style="background: #ffffff">
-                                              <script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- posnic 120x90 vertical small -->
-<ins class="adsbygoogle"
-     style="display:inline-block;width:120px;height:90px"
-     data-ad-client="ca-pub-5212135413309920"
-     data-ad-slot="3677012951"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-                               
-                                </div>                              
+
 			</div> <!-- end side-menu -->
 			
 			<div class="side-content fr">
@@ -339,7 +328,7 @@ div.pagination span.current {
 					<?php
 						
 				
-					//Gump is libarary for Validatoin
+					//Gump is libarary for Validation
 					 if(isset($_GET['msg'])){
                                                                               $data=$_GET['msg'];
                                             $msg='<p style=color:#153450;font-family:gfont-family:Georgia, Times New Roman, Times, serif>'.$data.'</p>';//

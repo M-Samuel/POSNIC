@@ -102,7 +102,7 @@ include_once("init.php");
 					<li><a href="add_category.php">Add Stock Category</a></li>
 					<li><a href="view_category.php">view Stock Category</a></li>
 				</ul>
-				                        
+
 			</div> <!-- end side-menu -->
 			
 			<div class="side-content fr">
@@ -134,17 +134,17 @@ include_once("init.php");
 			
 				
 			if($db->query("UPDATE category_details  SET category_name='$name',category_description='$address' where id=$id"))
-			{ 
+			{
                         	$data=" $name  Category Details Updated" ;
 				                                            $msg='<p style=color:#153450;font-family:gfont-family:Georgia, Times New Roman, Times, serif>'.$data.'</p>';//
                                             ?>
                                                     
- <script  src="dist/js/jquery.ui.draggable.js"></script>
+<script  src="dist/js/jquery.ui.draggable.js"></script>
 <script src="dist/js/jquery.alerts.js"></script>
 <script src="dist/js/jquery.js"></script>
 <link rel="stylesheet"  href="dist/js/jquery.alerts.css" >
                                                   
-                                            <script type="text/javascript">
+<script type="text/javascript">
 	
 					jAlert('<?php echo  $msg; ?>', 'POSNIC');
 			
@@ -181,8 +181,6 @@ include_once("init.php");
                   
                     </tr>
                    
-                      
-                    </tr>
                    
                     <tr>
                       <td>

@@ -216,8 +216,6 @@ function numbersonly(e){
 					  value="<?php echo $line->date  ; ?>" /></td>
                     </tr>
                    
-                      
-                    </tr>
                    
                     <tr>
                       <td>&nbsp;</td>

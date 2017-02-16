@@ -191,18 +191,7 @@ for (i = 0; i < field.length; i++)
 					<li><a href="view_sales.php">View Sales</a></li>
 					
 				</ul>
-				           <div style="background: #ffffff">
-                                              <script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- posnic 120x90 vertical small -->
-<ins class="adsbygoogle"
-     style="display:inline-block;width:120px;height:90px"
-     data-ad-client="ca-pub-5212135413309920"
-     data-ad-slot="3677012951"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-                               
-                                </div>                                                          
+
 			</div> <!-- end side-menu -->
 			
 			<div class="side-content fr">
@@ -282,8 +271,7 @@ $query = "SELECT COUNT(transactionid) as num FROM stock_sales WHERE stock_name L
 
 
 	$total_pages = mysql_fetch_array(mysql_query($query));
-
-	$total_pages = $total_pages[num];
+	$total_pages = $total_pages['num'];
  
 	
 
@@ -297,7 +285,7 @@ if(isset($_GET['limit']) && is_numeric($_GET['limit'])){
         $_GET['limit']=10;
 }
 
-	$page = $_GET['page'];
+	$page = isset($_GET['page'])? $_GET['page']: 0 ;
 
 
 	if($page) 

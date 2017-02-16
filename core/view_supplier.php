@@ -190,18 +190,7 @@ for (i = 0; i < field.length; i++)
 					<li><a href="add_supplier.php">Add supplier</a></li>
 					<li><a href="view_supplier.php">View supplier</a></li>
 				</ul>
-				       <div style="background: #ffffff">
-                                              <script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- posnic 120x90 vertical small -->
-<ins class="adsbygoogle"
-     style="display:inline-block;width:120px;height:90px"
-     data-ad-client="ca-pub-5212135413309920"
-     data-ad-slot="3677012951"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-                               
-                                </div>                                                              
+
 			</div> <!-- end side-menu -->
 			
 			<div class="side-content fr">
@@ -281,8 +270,7 @@ $query = "SELECT COUNT(*) as num FROM  supplier_details WHERE supplier_name LIKE
 
 
 	$total_pages = mysql_fetch_array(mysql_query($query));
-
-	$total_pages = $total_pages[num];
+	$total_pages = $total_pages['num'];
  
 	
 
@@ -296,7 +284,7 @@ if(isset($_GET['limit']) && is_numeric($_GET['limit'])){
         $_GET['limit']=10;
 }
 
-	$page = $_GET['page'];
+	$page = isset($_GET['page'])? $_GET['page']: 0;
 
 
 	if($page) 
@@ -524,7 +512,7 @@ while($row = mysql_fetch_array($result))
     <td>	<a href="update_supplier.php?sid=<?php echo $row['id'];?>&table=supplier_details&return=view_supplier.php"	class="table-actions-button ic-table-edit">
 	</a>
 	
-<a  href="javascript:confirmSubmit(<?php echo $row['id'];?>,'supplier_details','view_supplier.php')" class="table-actions-button ic-table-delete"></a>		
+<a href="javascript:confirmSubmit(<?php echo $row['id'];?>,'supplier_details','view_supplier.php')" class="table-actions-button ic-table-delete"></a>		
     </td>
 	<td><input type="checkbox" value="<?php echo $row['id']; ?>" name="checklist[]" id="check_box" /></td>
 

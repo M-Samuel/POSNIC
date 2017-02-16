@@ -5,8 +5,8 @@ header("Location: index.php?msg=Please%20login%20to%20access%20admin%20area%20!&
 }
 	error_reporting (E_ALL ^ E_NOTICE);
 	include("lib/db.class.php");
-        if(!include_once "config.php"){
-           header("Location: install.php");
+    if(!include_once "config.php"){
+       header("Location: install.php");
  }
 	
 	// Open the base (construct the object):

@@ -93,7 +93,7 @@ if(isset($_SESSION['username'])) {
 				<h5>Enter your credentials below</h5>
 			
 			</div> <!-- login-intro -->
-    
+
 			<!-- Change this image to your own company's logo -->
 			<!-- The logo will automatically be resized to 39px height. -->
 			<a href="http://posnic.com/" id="company-branding" class="fr"  target="blank"><img src="<?php if(isset($_SESSION['logo'])) { echo "upload/".$_SESSION['logo'];}else{ echo "upload/posnic.png"; } ?>" alt="Point of Sale" /></a>

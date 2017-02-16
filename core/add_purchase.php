@@ -510,7 +510,7 @@ function balance_amount(){
 				
 							
 					<?php
-					//Gump is libarary for Validatoin
+					//Gump is libarary for Validation
                                          if(isset($_GET['msg'])){
                                              $data=$_GET['msg'];
                                             $msg='<p style=color:#153450;font-family:gfont-family:Georgia, Times New Roman, Times, serif>'.$data.'</p>';//

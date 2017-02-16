@@ -89,7 +89,6 @@ function numbersonly(e){
     }
     }
 	</script>
-	</script>
 
 </head>
 <body>
@@ -139,12 +138,9 @@ function numbersonly(e){
 					<li><a href="view_product.php">View Stock/Product</a></li>
 					<li><a href="add_category.php">Add Stock Category</a></li>
 					<li><a href="view_category.php">view Stock Category</a></li>
-                                        <li><a href="view_stock_availability.php">view Stock Available</a></li>
-				
-                                  
-                                </ul>
-                               
-                                
+                    <li><a href="view_stock_availability.php">view Stock Available</a></li>
+                </ul>
+
 			</div> <!-- end side-menu -->
                         
 			<div class="side-content fr">
@@ -155,16 +151,16 @@ function numbersonly(e){
 					
 						<h3 class="fl">Add Stock </h3>
 						<span class="fr expand-collapse-text">Click to collapse</span>
-                                                <div style="margin-top: 15px;margin-left: 150px"></div>
+                        <div style="margin-top: 15px;margin-left: 150px"></div>
 						<span class="fr expand-collapse-text initial-expand">Click to expand</span>
 					
 					</div> <!-- end content-module-heading -->
 					
-						<div class="content-module-main cf">
+					<div class="content-module-main cf">
 				
 							
 					<?php
-					//Gump is libarary for Validatoin
+					//Gump is libarary for Validation
 					
 					if(isset($_POST['name'])){
 					$_POST = $gump->sanitize($_POST);
@@ -227,13 +223,13 @@ function numbersonly(e){
 					jAlert('<?php echo  $msg; ?>', 'POSNIC');
 			
 </script>
-                                                        <?php
+<?php
 			}
 			else
 			{
 				
 			if($db->query("insert into stock_details(stock_id,stock_name,stock_quatity,supplier_id,company_price,selling_price,category) values('$stockid','$name',0,'$supplier',$cost,$sell,'$category')"))
-			{ 
+			{
 				$db->query("insert into stock_avail(name,quantity) values('$name',0)");
                                   $msg=" $name Stock Details Added" ;
 				header("Location: add_stock.php?msg=$msg");
@@ -248,24 +244,19 @@ function numbersonly(e){
 							}
 						
 				if(isset($_GET['msg'])){
-                                             $data=$_GET['msg'];
-                                            $msg='<p style=color:#153450;font-family:gfont-family:Georgia, Times New Roman, Times, serif>'.$data.'</p>';//
-                                            ?>
+                   $data=$_GET['msg'];
+                   $msg='<p style=color:#153450;font-family:gfont-family:Georgia, Times New Roman, Times, serif>'.$data.'</p>';//
+?>
                                                     
- <script  src="dist/js/jquery.ui.draggable.js"></script>
+<script  src="dist/js/jquery.ui.draggable.js"></script>
 <script src="dist/js/jquery.alerts.js"></script>
 <script src="dist/js/jquery.js"></script>
-<link rel="stylesheet"  href="dist/js/jquery.alerts.css" >
+<link rel="stylesheet"  href="dist/js/jquery.alerts.css">
                                                   
-                                            <script type="text/javascript">
-	
-					jAlert('<?php echo  $msg; ?>', 'POSNIC');
-			
+<script type="text/javascript">
+	jAlert('<?php echo  $msg; ?>', 'POSNIC');
 </script>
-                                                        <?php
-                                         }
-				
-				?>
+<?php } ?>
 				
 				<form name="form1" method="post" id="form1" action="">
                   
@@ -318,7 +309,7 @@ function numbersonly(e){
 					  <td align="right"><input class="button round red   text-upper"  type="reset" name="Reset" value="Reset"> </td>
                     </tr>
                   </table>
-                </form>  
+                </form>
 						
 				
 					</div> <!-- end content-module-main -->
@@ -329,7 +320,7 @@ function numbersonly(e){
 				
 		
 		</div> <!-- end full-width -->
-		  	
+
 	</div> <!-- end content -->
 
 </body>

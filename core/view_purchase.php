@@ -229,8 +229,7 @@ $query = "SELECT COUNT(DISTINCT stock_id) as num FROM stock_entries WHERE stock_
 
 }
 	$total_pages = mysql_fetch_array(mysql_query($query));
-
-	$total_pages = $total_pages[num];
+	$total_pages = $total_pages['num'];
 
 	
 
@@ -242,7 +241,7 @@ $query = "SELECT COUNT(DISTINCT stock_id) as num FROM stock_entries WHERE stock_
 	if(isset($_GET['limit']))
 	$limit=$_GET['limit'];
 	
-	$page = $_GET['page'];
+	$page = isset($_GET['page'])? $_GET['page']: 0;
 
 	if($page) 
 
@@ -480,7 +479,7 @@ while($row = mysql_fetch_array($result))
 
   											<tr>
 
-                                                                                            <td><?php echo $no+$i; ?></td>
+
 
        	<td width="100"><?php echo $line->stock_id; ?></td>
        	<td width="100"><?php echo $line->stock_name; ?></td>

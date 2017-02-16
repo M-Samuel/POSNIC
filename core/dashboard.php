@@ -70,10 +70,9 @@ include_once("init.php");
 					<li><a href="add_customer.php">Add Customer</a></li>
 					<li><a href="view_report.php">Report</a></li>
 				</ul>
-                                
-                                 
+
 			</div> <!-- end side-menu -->
-                        
+
 			<div class="side-content fr">
 			
 				<div class="content-module">
@@ -183,17 +182,13 @@ include_once("init.php");
 							
 				
 				</div> <!-- end content-module -->
-				
-			    
-		
+
 		</div> <!-- end full-width -->
 			
                 </div>
             </div>
-        <div>
-     
-        </div>
-	
+        <div> </div>
+
 
 </body>
 </html>

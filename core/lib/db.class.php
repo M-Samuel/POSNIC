@@ -29,15 +29,14 @@
       $this->mtStart    = $this->getMicroTime();
       $this->nbQueries  = 0;
       $this->lastResult = NULL;
-     $myconnection = mysql_connect($server, $user, $pass);
-     $myconnection =  mysql_select_db($base)              ;
+      $myconnection = mysql_connect($server, $user, $pass);
+      $myconnection =  mysql_select_db($base)              ;
       
       if ($myconnection==FALSE) {
           $data='Database Connection is Not valid Please Enter The valid database connection';
-   header("location:install.php?msg=$data");
-    exit;
-       
-}
+          header("location:install.php?msg=$data");
+          exit;
+      }
     }
 
     /** Query the database.

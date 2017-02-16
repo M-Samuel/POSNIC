@@ -1,7 +1,7 @@
 <?php session_start();
- if(isset($_POST['host']) and isset($_POST['username'])  and $_POST['host']!="" and $_POST['username']!="")
+ if(isset($_POST['host']) and isset($_POST['username']) and $_POST['host']!="" and $_POST['username']!="")
         {
-         $host=  trim($_POST['host']);
+            $host=  trim($_POST['host']);
             $user= trim($_POST['username']);
             $pass= trim($_POST['password']); 
             $name;

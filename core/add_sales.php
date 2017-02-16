@@ -459,7 +459,6 @@ function discount_amount(){
         if(document.getElementById('discount').value==""){
              document.getElementById('disacount_amount').value="";
         }
-        
         discont=parseFloat(document.getElementById('disacount_amount').value);
     if(document.getElementById('disacount_amount').value==""){
         discont=0;
@@ -612,27 +611,22 @@ function discount_type_per(){
 						<div class="content-module-main cf">
 				
 							
-					<?php
+<?php
 					//Gump is libarary for Validatoin
 					 if(isset($_GET['msg'])){
-                                                                              $data=$_GET['msg'];
-                                            $msg='<p style=color:#153450;font-family:gfont-family:Georgia, Times New Roman, Times, serif>'.$data.'</p>';//
-                                            ?>
+                         $data=$_GET['msg'];
+                         $msg='<p style=color:#153450;font-family:gfont-family:Georgia, Times New Roman, Times, serif>'.$data.'</p>';//
+?>
                                                     
- <script  src="dist/js/jquery.ui.draggable.js"></script>
+<script  src="dist/js/jquery.ui.draggable.js"></script>
 <script src="dist/js/jquery.alerts.js"></script>
 <script src="dist/js/jquery.js"></script>
 <link rel="stylesheet"  href="dist/js/jquery.alerts.css" >
                                                   
-                                            <script type="text/javascript">
-	
-					jAlert('<?php echo  $msg; ?>', 'POSNIC');
-			
+<script type="text/javascript">
+	jAlert('<?php echo  $msg; ?>', 'POSNIC');
 </script>
-                                                        <?php
-                                        }
-                                     
-					?>
+<?php } ?>
 				
 				<form name="form1" method="post" id="form1" action="">
                                     <input type="hidden" id="posnic_total" >
@@ -668,7 +662,8 @@ function discount_type_per(){
                        
                     </tr>
                   </table>
-                  </div><br><div align="center">
+                  </div><br>
+                  <div align="center">
                   <input type="hidden" id="guid">
                   <input type="hidden" id="edit_guid">
                         
@@ -702,7 +697,6 @@ function discount_type_per(){
                      
                     </tr>
                   </table>
-                          
                        <div style="overflow:auto ;max-height:300px;  ">
                            <table class="form" id="item_copy_final" style="margin-left:45px ">
                     

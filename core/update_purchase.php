@@ -409,7 +409,7 @@ function quantity_chnage(e){
 			$description=mysql_real_escape_string($_POST['description']);
 			
 			$namet=$_POST['stock_name'];
-			$quantityt=$_POST['quanitity'];
+			$quantityt=isset($_POST['quanitity'])?  $_POST['quanitity']:'';
 			$bratet=$_POST['cost'];
 			$sratet=$_POST['sell'];
 			$totalt=$_POST['total'];

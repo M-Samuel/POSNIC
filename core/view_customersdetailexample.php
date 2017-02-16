@@ -393,8 +393,7 @@ $query = "SELECT COUNT(*) as num FROM  customer_details WHERE customer_name LIKE
 
 
 	$total_pages = mysql_fetch_array(mysql_query($query));
-
-	$total_pages = $total_pages[num];
+	$total_pages = $total_pages['num'];
 
 	
 
@@ -407,7 +406,7 @@ if(isset($_GET['limit']))
 	$limit=$_GET['limit'];
 	
 
-	$page = $_GET['page'];
+	$page = isset($_GET['page'])? $_GET['page']: 0;
 
 	if($page) 
 
@@ -469,12 +468,10 @@ if(isset($_GET['limit']))
 
 		if ($page > 1) 
 
-			$pagination.= "<a href=\"$targetpage?page=$prev&limit=$limit\">    previous</a>";
-
+			$pagination.= "<a href=\"$targetpage?page=$prev&limit=$limit\">
 		else
 
-			$pagination.= "<span class=\"disabled\">    previous</span>";	
-
+			$pagination.= "<span class=\"disabled\">
 		
 
 		//pages	
@@ -601,12 +598,10 @@ if(isset($_GET['limit']))
 
 		if ($page < $counter - 1) 
 
-			$pagination.= "<a href=\"$targetpage?page=$next&limit=$limit\">next    </a>";
-
+			$pagination.= "<a href=\"$targetpage?page=$next&limit=$limit\">next 
 		else
 
-			$pagination.= "<span class=\"disabled\">next    </span>";
-
+			$pagination.= "<span class=\"disabled\">next 
 		$pagination.= "</div>\n";		
 
 	}

@@ -150,19 +150,6 @@ function stock_sales_report_fn()
 					                                      
 				</ul>
                                     </ul>
-                                <div style="background:#ffffff ">
-                                    <script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- posnic (180x90) Displays 3 links -->
-<ins class="adsbygoogle"
-     style="display:inline-block;width:180px;height:90px"
-     data-ad-client="ca-pub-5212135413309920"
-     data-ad-slot="1223074159"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-                                </div>
-                                    
-                                                                
 				
 			</div> <!-- end side-menu -->
 			

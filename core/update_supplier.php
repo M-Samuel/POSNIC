@@ -192,8 +192,7 @@ include_once("init.php");
 					  value="<?php echo $line->supplier_contact2; ?>" /></td>
                     </tr>
                    
-                      
-                    </tr>
+
                    
                     <tr>
                       <td>

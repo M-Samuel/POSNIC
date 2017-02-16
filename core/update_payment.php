@@ -234,8 +234,6 @@ function numbersonly(e){
 					 /></td>
                     </tr>
                    
-                      
-                    </tr>
                    
                     <tr>
                       <td>&nbsp;</td>
